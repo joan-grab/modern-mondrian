@@ -1,0 +1,219 @@
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Dosis', Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body {
+    background-color: #f6f6f6;
+    height: 100%;
+}
+
+#painting {
+    background-color: #eeeee2;
+    width: 80vw;
+    height: 80vw;
+    margin: auto;
+    margin-bottom: 10vw;
+
+    box-shadow: 10px 10px 7px #8d8d8d;
+}
+
+@media (orientation: landscape) {
+    #painting {
+        width: 80vh;
+        height: 80vh;
+    }
+}
+
+/* rows */
+
+#toprow {
+    height: 72.5%;
+}
+
+#middlerow {
+    height: 3.5%;
+}
+
+#bottomrow {
+    height: 24%;
+}
+
+/* columns */
+
+.topleftcolumn {
+    width: 21.5%;
+}
+
+.bottomrightcolumn{
+    width: 8%;
+}
+
+/* proportion of boxes */
+
+.largebox {
+    width: 75.2%;
+}
+
+.mediumbox-upper {
+    height: 40%;
+}
+
+.mediumbox-lower {
+    height: 52%;
+}
+
+.smallbox {
+    width: 21.7%;
+}
+
+.widebox {
+    width: 63.5%;
+}
+
+.tinybox1, .tinybox2 {
+    height: 40%;
+}
+
+.divider1 {
+    width: 3.5%;
+}
+
+.divider2 {
+    height: 8%;
+}
+
+.divider3, .divider4 {
+    width: 3.5%;
+}
+
+.divider5 {
+    height: 20%;
+}
+
+/* color */
+
+.white {
+    background-color: #eeeee2;    
+}
+
+.red {
+    background-color: #cc3333;   
+}
+
+.blue {
+    background-color: #1d5596;   
+}
+
+.yellow {
+    background-color: #f8e15f;   
+}
+
+.black {
+    background-color: #393939;   
+}
+
+/* position */
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* window with text */
+
+.window {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    box-shadow: 7px 7px 7px rgba(73, 73, 73, 0.5);
+    opacity: 0;
+}
+
+.window > .widebox {
+    width: 78%;
+}
+
+.window > .bottomrightcolumn {
+    width: 17%;
+}
+
+.window .tinybox1, .window .tinybox2 {
+    height: 45%;
+}
+
+.window > .divider4 {
+    width: 5%;
+}
+
+.window .divider5 {
+    height: 10%;
+}
+
+.note {
+    padding: 5%;
+}
+
+.note.container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.note img {
+    width: 46%;
+    height: 46%;
+    box-shadow: 3px 3px 3px #8d8d8d;
+}
+
+p {
+    font-size: 1.7vw;
+    margin: 0;
+}
+
+@media (orientation: landscape) {
+    p {
+        font-size:  1.7vh;
+    }
+}
+
+.note p {
+    text-align: justify;
+    padding-top: 9%;
+}
+
+.smallbox p {
+    color: #eeeee2;
+    text-align: center;
+    margin: auto;
+    opacity: 0;
+}
+
+/* animation */
+
+.largebox, .smallbox {
+    transform: rotateY(180deg);
+    transition: transform 1s linear;
+}
+
+.largebox > div {
+    transition: opacity 0s linear 0.5s;
+}
+
+.smallbox > p {
+    transition: opacity 0s linear 0.5s;
+}
+
+.largebox:hover, .smallbox:hover {
+    transform: rotateY(360deg);
+}
+
+.largebox:hover > div {
+    opacity: 1;
+}
+
+.smallbox:hover > p {
+    opacity: 1;
+}
